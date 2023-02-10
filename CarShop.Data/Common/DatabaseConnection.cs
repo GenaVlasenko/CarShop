@@ -6,12 +6,13 @@ namespace CarShop.Data.Layer.Common
     public class DatabaseConnection
     {
         private IConfiguration _configuration { get; set; }
-        public SqlConnection connection { get; set; }
-        public SqlDataReader reader { get; set; }
 
         private SqlCommand _command;
 
-        public DatabaseConnection(IConfiguration configuration)
+	public SqlConnection connection { get; set; }
+	public SqlDataReader reader { get; set; }
+
+	public DatabaseConnection(IConfiguration configuration)
         {
             _configuration = configuration;
         }
