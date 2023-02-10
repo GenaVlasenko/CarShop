@@ -1,0 +1,67 @@
+﻿<div class="container-fluid" style="max-height:100%; padding:0px; display:flex">
+    <div style="width:80%; height:100%; display: flex; flex-wrap: wrap; margin-top: 10px; padding: 5px; overflow: hidden;">
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <img class="car_details_photo" src="@item.first_photo" />
+                <img class="car_details_photo" src="@item.second_photo" />
+                <img class="car_details_photo" src="@item.third_photo" />
+                <img class="car_details_photo" src="@item.four_photo" />
+            }
+
+        }
+        else
+        {
+            <h1>Сторінка на доопрацюванні</h1>
+
+        }
+
+
+    </div>
+
+    <div style="width: 20%; height: 100%; display: flex; margin-top: 20px">
+       @foreach (var car in ViewBag.OneCar)
+        {
+            <abbr style="font-size:16px">
+                Марка авто: @car.CarName<br />
+                Модель: @car.Model<br />
+                Рік випуску: @car.Year<br />
+                Колір: @car.Color<br />
+                Тип двигуна: @car.Engine<br />
+                Короба : @car.Transmission<br />
+                Тип кузова : @car.TypeofCar<br />
+                Пробіг: @car.Mileage<br />
+                Наявність: @car.CarInStock<br />
+                Участь в ДТП : @car.CarAccident <br />
+               @if (car.Price == ViewBag.PriceWithSale)
+                {
+                    <a style="color:green">Ціна: @car.Price $ </a><br />
+                }
+                else
+                {
+                    <s style="color:red">Ціна: @car.Price $ </s><br /><a style="color:green">Ціна зі знижкою: @ViewBag.PriceWithSale $</a><img src="~/img/sale-tag.png" height="30" style="padding: 0px 10px" />
+                }
+            </abbr>
+            <br />
+
+        }
+        
+    </div>
+</div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                       
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

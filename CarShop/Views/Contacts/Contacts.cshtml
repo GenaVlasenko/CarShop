@@ -1,0 +1,30 @@
+﻿<h3 style="margin-left:15px">Регіональні представництва нашої компанії:</h3>
+<div class="row">
+    <div class="col-md-5">
+        <div class="panel" style="background-color:black; color:lightgray">
+            <div class="panel-heading">Контакти:</div>
+            <div class="panel-body">
+                @foreach (var contact in Model)
+                {
+                   @if (ViewBag.Admin == "1")
+                    {
+                        <a>
+                            @contact.phone | @contact.city | код контакту @contact.id<br />
+                        </a>
+
+                    }
+                    else
+                    {
+                        <a>
+                            @contact.phone | @contact.city <br />
+                        </a>
+
+                    }
+
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

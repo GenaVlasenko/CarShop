@@ -1,0 +1,37 @@
+﻿<div class="row">
+    <h3 style="margin-left:25px">Відео відгуки наших покупців:</h3>
+    @foreach (var item in Model)
+     {
+        <div class="col-md-4" style="background-color:black; color:lightgray;">
+            <div class="panel" style="background-color:black; color:lightgray;">
+               @if (ViewBag.Admin == "1")
+                {
+                    <div class="panel-heading">Автомобіль: @item.Car <br /> Код відгука: @item.id</div>
+                }
+                else
+                {
+                    <div class="panel-heading">Автомобіль: @item.Car</div>
+                }
+
+                <div class="panel-body" style="background-color:black; color:lightgray;">
+
+
+                    <a href="@item.LinkOnVideo">
+                        <img src="@item.image" style="max-width:100%; max-height:100%"/>
+                    </a>
+
+
+                    @*<div class="video">
+
+                    <iframe src="@item.LinkOnVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="img-responsive"></iframe>
+                    </div>*@
+
+
+                </div>
+
+            </div>
+        </div>
+
+     }
+
+</div>

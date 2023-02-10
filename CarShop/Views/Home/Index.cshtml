@@ -1,0 +1,319 @@
+﻿<div class="row">
+
+    <div class="col-md-10" style="background-color:black">
+        @{int count = 0; }
+        @foreach (var car in Model.GetAllCars)
+        {
+            <div class="col-md-4">
+               @if (@ViewBag.PriceWithSale[count] < car.Price)
+                {
+
+                    <div class="panel panel_style">
+                        <div class="panel-heading photo panel-foto">
+
+                            <img class="cars_photo" src="@car.Picture">
+
+                        </div>
+
+                        <div class="panel-body panel_style" style="background-color:black; overflow:hidden">
+                            <abbr style="min-width:min-content; max-width:max-content; max-height:max-content; min-height:min-content">
+                                Марка авто: @car.CarName<br />
+                                Модель: @car.Model<br />
+                                Рік випуску: @car.Year<br />
+                                Колір: @car.Color<br />
+                                Тип двигуна: @car.Engine<br />
+                                Короба : @car.Transmission<br />
+                                Тип кузова : @car.TypeofCar<br />
+                                Пробіг: @car.Mileage<br />
+                                Наявність: @car.CarInStock<br />
+                                Участь в ДТП : @car.CarAccident <br />
+                                <a style="color:royalblue">Код автомобіля: </a>@car.Id<br />
+                            </abbr>
+                            <br />
+                            <form action="~/CarDetails/Index" method="post" style="display:flex; justify-content:center">
+                                <button name="id" type="submit" value="@car.Id" class="btn" style="width: 100%; background-color: #9b988f">Детальніше</button>
+                            </form>
+
+
+
+
+                        </div>
+
+                        <form action="~/OrderPage/OrderPage">
+
+                            @if (ViewBag.PriceWithSale[@count] == @car.Price)
+                            {
+
+                                <div class="panel-footer" style="background-color:transparent"><a style="color:green">Ціна: @car.Price $ </a><br /> Без знижки % <p><br /> <button class="btn btn-success" name="id" type="submit" value="@car.Id" style="width:50%">Купити</button></p></div>
+                            }
+                            else
+                            {
+                                <div class="panel-footer" style="background-color:transparent">Ціна:<s style="color:#de2a2a">@car.Price $</s> <br /> <a style="color:green">Ціна зі знижкою: @ViewBag.PriceWithSale[count] $ </a><p><br /><button class="btn btn-success" name="id" type="submit" value="@car.Id" style="width:50%">Купити</button><img src="~/img/sale-tag.png" style="padding: 0px 10px; max-height:30px" /></p></div>
+                            }
+                            @{
+                                count++;
+                            }
+
+                        </form>
+                    </div>
+
+
+                }
+                else
+                {
+                    <div class="panel panel_style">
+                        <div class="panel-heading photo panel-foto">
+
+                            <img class="cars_photo" src="@car.Picture">
+
+                        </div>
+
+                        <div class="panel-body">
+
+                            <abbr>
+                                Марка авто: @car.CarName<br />
+                                Модель: @car.Model<br />
+                                Рік випуску: @car.Year<br />
+                                Колір: @car.Color<br />
+                                Тип двигуна: @car.Engine<br />
+                                Короба : @car.Transmission<br />
+                                Тип кузова : @car.TypeofCar<br />
+                                Пробіг: @car.Mileage<br />
+                                Наявність: @car.CarInStock<br />
+                                Участь в ДТП : @car.CarAccident <br />
+                                <a style="color:royalblue">Код автомобіля: </a>@car.Id<br />
+                            </abbr>
+                            <br />
+                            <form action="~/CarDetails/Index">
+                                <button class="btn" name="id" type="submit" value="@car.Id" style="width: 100%; background-color: #DCDCDC">Детальніше</button>
+                            </form>
+                        </div>
+
+
+                        <form action="~/OrderPage/OrderPage">
+                           @if (ViewBag.PriceWithSale[@count] == @car.Price)
+                            {
+
+                                <div class="panel-footer" style="background-color:black"><a style="color:green">Ціна: @car.Price $ </a><br /> Без знижки % <p><br /><button class="btn btn-success" name="id" type="submit" value="@car.Id" style="width:50%; min-width:40px">Купити</button></p></div>
+
+
+                            }
+                            else  
+                            {
+
+                                <div class="panel-footer" style="background-color:black">Ціна:<s style="color: #de2a2a">@car.Price $</s> <br /> <a style="color:green">Ціна зі знижкою: @ViewBag.PriceWithSale[count] $ </a><p><button class="btn btn-success" name="id" type="submit" value="@car.Id" style="max-width: 50%; min-width: 40px">Купити</button></p></div>
+
+
+                            }
+                            @{
+                                count++;
+                            }
+
+                        </form>
+                        @*<img src="/img/Cars/Tesla-model-3.jpg"/>
+                        <video src="/img/CarsDetails/BMW M4/BMW M4.mp4"/>*@
+
+
+
+
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="col-md-2" style="margin-top: 10px; background-color: black">
+
+        <div class="panel container panel_style">
+            <form class="" action="~/Home/Index" method="post">
+                <button class="btn button-standart" name="default_button" value="null" style="background-color:#de2a2a; color:black;">Скинути фільтри</button>
+            </form>
+            <br />
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle button-standart" data-toggle="dropdown">
+                    @{
+                        string engine = ViewBag.EngineDropDown == null ? "Тип двигуна" : ViewBag.EngineDropDown;
+                    }   @engine
+                </button>
+
+
+                <div class="dropdown-menu">
+                    @foreach (var enig in ViewBag.Engine)
+                    {
+                        <form action="~/Home/Index" method="post">
+                            <button type="submit" class="dropdown-item" name="car" value=@enig>@enig</button>
+                        </form>
+                    }
+                </div>
+            </div>
+            <br />
+
+            <div class="dropdown">
+                <button class="btn button-standart dropdown-toggle" data-toggle="dropdown">
+                    @{
+                        string typecar = ViewBag.TypeofCarDropDown == null ? "Тип кузова" : ViewBag.TypeofCarDropDown;
+                    }   @typecar
+
+                </button>
+
+                <div class="dropdown-menu">
+                    @foreach (var type in ViewBag.TypeofCar)
+                    {
+                        <form action="~/Home/Index" method="post">
+                            <button type="submit" class="dropdown-item" name="car" value=@type>@type</button>
+                        </form>
+                    }
+                </div>
+            </div>
+            <br />
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle button-standart" data-toggle="dropdown">
+                    @{
+                        string carname = ViewBag.CarNameDropDown == null ? "Марка" : ViewBag.CarNameDropDown;
+                    }   @carname
+
+                </button>
+
+                <div class="dropdown-menu">
+                    @foreach (var car in ViewBag.Car)
+                    {
+                        <form action="~/Home/Index" method="post">
+                            <button type="submit" class="dropdown-item" name="car" value=@car>@car</button>
+                        </form>
+                    }
+                </div>
+
+            </div>
+            <br />
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle button-standart" data-toggle="dropdown">
+                    @{
+                        string carmodel = ViewBag.ModelDropDown == null ? "Модель" : ViewBag.ModelDropDown;
+                    }   @carmodel
+
+
+                </button>
+
+                <div class="dropdown-menu">
+
+                    @foreach (var models in ViewBag.Model)
+                    {
+                        <form action="~/Home/Index" method="post">
+                            <button type="submit" class="dropdown-item" name="car" value=@models>@models</button>
+                        </form>
+                    }
+
+                </div>
+
+
+            </div>
+            <br />
+
+            @*<form class="needs-validation" action="~/Home/Index">
+                <input type="number" class="form-control " placeholder="0" name="_minprice" style="width:80px; height:30px" />
+                <input type="number" class="form-control input_standart" placeholder="100000"  name="_maxprice" style="width:80px; height:30px" /><br />
+                <button type="submit" class="btn btn-warning" style="font-size:smaller">Застосувати</button><br />
+            </form>*@
+
+        </div>
+      
+        <hr />
+
+        <div class="panel panel_style">
+            <div class="panel-heading"><abbr style="position:center">Потрібна консультація?</abbr></div>
+            <div class="panel-body" style="background-color:transparent">
+                <form class="needs-validation" action="~/OrderPage/SendCallback">
+                    <div class="row">
+                        <div class="col-md-12" @*style="position:relative"*@>
+                            <input type="text" class="form-control input_standart" placeholder="Ім'я" required name="Name" /><br />
+                            <input type="number" class="form-control input_standart" placeholder="Телефон" required name="Phone" /><br />
+                            <button type="submit" class="btn btn-warning" style="font-size:smaller">Вiдправити</button><br /><br />
+                           @if (@ViewBag.CallbackInfo != null)
+                            {
+                                <abbr>@ViewBag.CallbackInfo</abbr>
+                            }
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="panel panel_style">
+            <div class="panel-heading">Наші партнери:</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br />
+                        <br />
+                        <div class="photo" style="position:relative; ">
+                            <a href="https://intercars.com.ua"><img src="https://traktorist.ua/media/brands/1295/intercarslogo-559671.jpg" /></a>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="photo" style="position:relative">
+                            <a href="https://auto.ria.com"><img src="https://compania.com.ua/uploads/company/IzgsSPbFZfCaMO7Y4cC1y7uFPMo67FSEmHhQIrLt.png" /></a>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="photo" style="position:relative">
+                            <a href="https://www.copart.de"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Copart_logo.svg/1200px-Copart_logo.svg.png" /></a>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="photo" style="position:relative">
+                            <a href="https://atl.ua/ua"><img src="https://promocodius.com/ua/assets/ukr/logos/atl-logo.png" /></a>
+                        </div>
+                        <br />
+                        <br />
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="panel panel_style">
+            <div class="panel-heading"><abbr>Відгук нашого кліента:</abbr></div>
+            <div class="panel-body">
+                <form class="needs-validation" action="/Reviews/Reviews">
+                    <div class="row">
+                        <div class="col-md-12" style="position:relative">
+                            <div class="photo cars_photo">
+                                <a href="https://www.youtube.com/watch?v=-iEETEanMbQ&t=62s">
+                                    <img src="https://americanavto.com/wp-content/uploads/2019/10/tiguan-iz-ssha.jpg" class="img-responsive" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr />
+
+        <div class="panel panel_style">
+            <div class="panel-heading"><abbr>Зателефонуйте нам:</abbr></div>
+            <div class="panel-body">
+                <form class="needs-validation" action="/Reviews/Reviews">
+                    <div class="row">
+                        <div class="col-md-12" style="position: relative">
+                            <abbr>+38(067)553-33-01</abbr><br />
+                            <abbr>+38(066)302-33-01</abbr><br />
+                            <abbr>+38(063)201-43-01</abbr><br />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+
+

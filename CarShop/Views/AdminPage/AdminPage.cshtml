@@ -1,0 +1,117 @@
+﻿<div class="row">
+    <div class="col-md-4">
+        <div class="dropdown">
+            <button class="btn" dropdown-toggle" data-toggle="dropdown" style="background-color:lightgray">Що потрібно зробити?</button>
+            <div class="dropdown-menu">
+                <form action="~/AdminPage/AddElement" method="post">
+                    <button type="submit" class="dropdown-item">Додати(авто, сервіс, відгук)</button>
+                </form>
+                <form action="~/AdminPage/EditElement" method="post">
+                    <button type="submit" class="dropdown-item">Редагувати(авто, сервіс, відгук)</button>
+                </form>
+                <form action="~/AdminPage/DeleteElement" method="post">
+                    <button type="submit" class="dropdown-item">Видалити(авто, сервіс, відгук)</button>
+                </form>
+            </div>
+
+        </div>
+        <br />
+
+
+    </div>
+
+    <div class="col-md-4">
+        <form action="~/AdminPage/AdminPage">
+            <button class="btn btn-success">Перевірити замовлення</button>
+        </form>
+    </div>
+
+
+
+    @{
+        if (Model == null)
+        {
+            <div class="col-md-4">
+                <a>Замовлень поки що немає :(</a>
+            </div>
+
+
+        }
+        else
+        {
+
+            <div class="col-md-4">
+                <form action="~/AdminPage/DeleteAllOrders">
+                    <button class="btn btn-danger">Видалити всі замовлення</button>
+                    <br />
+                    <br />
+                    @if (ViewBag.OrdersMessage != null || ViewBag.CallbacksMessage != null)
+                    {
+                        <abbr>@ViewBag.OrdersMessage</abbr><br />
+                        <abbr>@ViewBag.CallbacksMessage</abbr><br />
+
+                    }
+                    else
+                    {
+
+
+                    }
+                </form>
+            </div>
+           
+            <hr />
+            
+
+            @foreach (var order in Model)
+            {
+                <div class="col-md-4">
+                    <div class="panel" style="background-color:black; color:lightgray">
+                        <div class="panel-heading">Замовлення:</div>
+                        <div class="panel-body">
+                            <abbr>
+                                Ім'я замовника: @order.FirstName <br />
+                                Прізвище: @order.LastName <br />
+                                Телефон: @order.Phone <br />
+                                Поштова адреса: @order.Email <br />
+                                Місто: @order.City <br />
+                                Код автомобіля: @order.CarId <br />
+
+                            </abbr>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+            
+            <hr />
+        }
+        if (ViewBag.AllCallbacks != null)
+        {
+            @foreach (var call in ViewBag.AllCallbacks)
+            {
+                <div class="col-md-4">
+                    <div class="panel" style="background-color:black; color:lightgray">
+                        <div class="panel-heading">Зворотний дзвінок:</div>
+                        <div class="panel-body">
+                            <abbr>
+                                Ім'я замовника: @call.Name <br />
+                                Телефон: @call.Phone <br />
+                            </abbr>
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+        }
+    }
+
+
+
+</div>
+
+
+
+

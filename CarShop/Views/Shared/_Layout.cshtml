@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/StyleSheet3.css"/>
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="__container" style="width:100%; max-height:517px;">
+            @if (ViewBag.Layout == null)
+            {
+
+
+                @*<div style="width:100%; max-height:377px; overflow:hidden">
+                    <img src="~/img/Image.jpg" style="width:100%; height:100%" />
+                </div>*@
+
+                <div class="row" style="max-height:377px; overflow:hidden">
+                    <img class="col-12" src="~/img/Image.jpg" />
+                </div>
+
+
+
+            }
+
+            else
+            {
+
+
+                <div class="panel_style" style="width:100%; max-height:377px; line-height:377px; text-align:center;">Сторінка на доопрацюванні!</div>
+                @*<video class="video-settings" src="@ViewBag.Layout" style="width:100%; max-height:377px" autoplay />*@
+
+                @*<div class="row">
+                    <video class="col-12" src="@ViewBag.Layout" autoplay />
+                </div>*@
+
+
+
+            }
+
+
+
+        </div>
+       
+
+        <nav class="navbar navbar-expand-md fixed-top" style="position: absolute; margin-top: 5px;">
+
+            @*<button class="navbar-toggler btn button-burger" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="justify-content:center">Меню</button>*@
+
+            <a class="menu-burger"></a>
+
+            <div style="width:50%; justify-content:start; background-color:transparent;">
+
+                <div class="collapse navbar-collapse" id="navbarCollapse" style="margin:0px">
+
+                    <div>
+                        @if (ViewBag.Admin == "1")
+                        {
+                            <form class="form-inline navbar-nav" action="~/Home/Index">
+                                <button class="btn navbar-nav ghost-button" type="submit" style="margin-left:0px;">Автомобілі</button>
+                            </form>
+
+                            <form class="form-inline navbar-nav" action="~/Services/Services">
+                                <button class="btn navbar-nav ghost-button" type="submit">Послуги</button>
+                            </form>
+
+                            <form class="form-inline navbar-nav" action="~/Reviews/Reviews">
+                                <button class="btn navbar-nav ghost-button" type="submit">Вiдгуки</button>
+                            </form>
+
+                            <form class="form-inline mt-2 mt-md-0 navbar-nav" action="~/AdminPage/AdminPage">
+                                <button class="btn navbar-nav ghost-button" type="submit">Кабінет</button><br />
+                            </form>
+
+
+
+                        }
+                        else
+                        {
+                            <form class="form-inline navbar-nav" action="~/Home/Index">
+                                <button class="btn navbar-nav ghost-button" type="submit" style="margin-left:0px">Автомобілі</button>
+                            </form>
+
+                            <form class="form-inline navbar-nav" action="~/Services/Services">
+                                <button class="btn navbar-nav ghost-button" type="submit">Послуги</button>
+                            </form>
+
+                            <form class="form-inline navbar-nav" action="~/Reviews/Reviews">
+                                <button class="btn navbar-nav ghost-button" type="submit">Вiдгуки</button>
+                            </form>
+
+                            <form class="form-inline navbar-nav" action="~/Contacts/Contacts">
+                                <button class="btn navbar-nav ghost-button" type="submit">Контакти</button>
+                            </form>
+
+
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 50%; justify-content:end; background-color: transparent">
+
+                <div class="collapse navbar-collapse" id="navbarCollapse" style="margin:0px 25px 0px 0px">
+                    @{
+                        string key = ViewBag.Admin;
+                        @switch (key)
+                        {
+                            case null:
+                                {
+                                    <form class="form-inline navbar-right" action="~/AdminPage/Check">
+                                        <input class="form-control ghost-input" type="email" placeholder="Email" name="login" required">
+                                        <input class="form-control ghost-input" type="password" placeholder="Password" name="password" required">
+                                        <button class="btn ghost-button" type="submit" style="margin-left:0px">Увійти</button>
+                                    </form>
+                                    break;
+
+                                }
+                            case "0":
+                                {
+
+                                    <form class="form-inline navbar-right" action="~/AdminPage/Check">
+                                        <abbr style="color:red">Логін або пароль невірний</abbr>
+                                        <input class="form-control ghost-input" type="email" placeholder="Email" name="login" required>
+                                        <input class="form-control ghost-input" type="password" placeholder="Password" name="password" required style="background-color: transparent; color: lightgray; border-color: gray; margin-left: 5px;">
+                                        <button class="btn ghost-button" type="submit" style="margin-left:0px">Увійти</button>
+                                    </form>
+                                    break;
+                                }
+
+                            case "1":
+                                {
+                                    <form class="form-inline navbar-right" action="~/AdminPage/Check">
+                                        <button class="btn ghost-button" type="submit" style="margin-left:0px">Вийти</button>
+                                    </form>
+
+                                    break;
+
+                                }
+
+
+
+
+                        }
+
+                    }
+                </div>
+            </div>
+        </nav>
+
+
+
+
+
+        <div class="main">
+            @RenderBody()
+        </div>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="background-color: black; color:lightgray">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2022 Company, Inc</span>
+            </div>
+
+            <div class="nav col-md-4 justify-content-end list-unstyled d-flex">
+
+                <a class="ms-3" href="https://instagram.com/americanexpress_auto?igshid=NzNkNDdiOGI="><img src="https://img.icons8.com/ultraviolet/40/000000/instagram-new.png" style="width:80%; margin-top:7px; overflow:hidden; position:relative" /></a>
+                <a class="ms-3" href="https://youtube.com/c/AMERICANAVTO"><img src="https://img.icons8.com/plasticine/50/000000/youtube-play--v2.png" style="width: 80%; margin-top:6px; overflow:hidden; position:relative" /></a>
+                <a class="ms-3" href="https://www.facebook.com/amerikan.avto"><img src="https://img.icons8.com/officel/50/000000/facebook-new.png" style="width: 65%; margin-top:6px; overflow:hidden; position:relative" /></a>
+                <a class="ms-3" href="#"><img src="https://img.icons8.com/officel/50/000000/twitter.png" style="width: 70%; margin-top:6px; overflow:hidden; position:relative" /></a>
+            </div>
+        </footer>
+    </div>
+            <script src="~/js/jquery.min.js"></script>
+            <script src="~/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

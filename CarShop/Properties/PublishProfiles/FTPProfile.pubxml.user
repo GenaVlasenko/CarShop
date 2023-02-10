@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfvda+v1dekCebHUjpRVrdQAAAAACAAAAAAAQZgAAAAEAACAAAAAvCHbD6c5bIzBLG5F3uV52fbE9Mr2dpG1M/LXYjE0K1gAAAAAOgAAAAAIAACAAAAC05QmV4sJC2pWN//0jQRjj0G+28yBQH0QoCeFI0zNk/jAAAAD9ZcrtJ+jqnex+gL4msn63YQrdBJdLTYX3sTc10EUj75b6jVvel/OHX4xr1tvTTTdAAAAAccVXuzLapDReJCf/vA2OkR+MydkKszmDP90puKIMI9ZaVs0Qi+ceGXSLzUG1p4FSPfIk4MiqSpdOyjePcv8r0Q==</EncryptedPassword>
+    <_PublishTargetUrl>ftp://carsamericanshop.somee.com/www.carsamericanshop.somee.com</_PublishTargetUrl>
+    <History>True|2023-01-29T10:31:40.3284521Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AngleSharp.dll">
+      <publishTime>06/02/2022 18:02:50</publishTime>
+    </File>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/03/2022 20:29:58</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>03/03/2022 20:29:58</publishTime>
+    </File>
+    <File Include="BouncyCastle.Crypto.dll">
+      <publishTime>10/19/2021 14:53:34</publishTime>
+    </File>
+    <File Include="CarShop.deps.json">
+      <publishTime>01/29/2023 12:27:28</publishTime>
+    </File>
+    <File Include="CarShop.dll">
+      <publishTime>01/29/2023 12:27:12</publishTime>
+    </File>
+    <File Include="CarShop.exe">
+      <publishTime>01/29/2023 12:27:12</publishTime>
+    </File>
+    <File Include="CarShop.pdb">
+      <publishTime>01/29/2023 12:27:12</publishTime>
+    </File>
+    <File Include="CarShop.runtimeconfig.json">
+      <publishTime>12/14/2022 10:57:13</publishTime>
+    </File>
+    <File Include="CarShop.Views.dll">
+      <publishTime>01/29/2023 12:27:26</publishTime>
+    </File>
+    <File Include="CarShop.Views.pdb">
+      <publishTime>01/29/2023 12:27:26</publishTime>
+    </File>
+    <File Include="db_settings.json">
+      <publishTime>09/17/2022 11:14:08</publishTime>
+    </File>
+    <File Include="Google.Protobuf.dll">
+      <publishTime>01/28/2022 10:49:18</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.dll">
+      <publishTime>09/12/2020 04:11:58</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.Streams.dll">
+      <publishTime>09/12/2020 04:11:58</publishTime>
+    </File>
+    <File Include="K4os.Hash.xxHash.dll">
+      <publishTime>07/03/2019 23:39:02</publishTime>
+    </File>
+    <File Include="Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 14:48:56</publishTime>
+    </File>
+    <File Include="MySql.Data.dll">
+      <publishTime>06/10/2022 23:37:08</publishTime>
+    </File>
+    <File Include="runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>08/16/2021 22:22:22</publishTime>
+    </File>
+    <File Include="runtimes/win-arm64/native/sni.dll">
+      <publishTime>07/12/2017 14:24:24</publishTime>
+    </File>
+    <File Include="runtimes/win-x64/native/sni.dll">
+      <publishTime>07/12/2017 14:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win-x86/native/sni.dll">
+      <publishTime>07/12/2017 14:24:22</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll">
+      <publishTime>08/16/2021 22:22:26</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netcoreapp3.1/System.Text.Encoding.CodePages.dll">
+      <publishTime>10/23/2021 02:47:18</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 13:01:34</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>11/20/2017 20:09:04</publishTime>
+    </File>
+    <File Include="System.Data.SqlClient.dll">
+      <publishTime>08/16/2021 22:14:56</publishTime>
+    </File>
+    <File Include="System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/23/2021 02:40:56</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 13:01:34</publishTime>
+    </File>
+    <File Include="System.Text.Encoding.CodePages.dll">
+      <publishTime>10/23/2021 02:47:22</publishTime>
+    </File>
+    <File Include="System.Web.Helpers.dll">
+      <publishTime>11/28/2018 15:04:24</publishTime>
+    </File>
+    <File Include="System.Web.Mvc.dll">
+      <publishTime>11/28/2018 14:59:46</publishTime>
+    </File>
+    <File Include="System.Web.Razor.dll">
+      <publishTime>11/28/2018 15:00:12</publishTime>
+    </File>
+    <File Include="System.Web.WebPages.Deployment.dll">
+      <publishTime>11/28/2018 15:04:24</publishTime>
+    </File>
+    <File Include="System.Web.WebPages.dll">
+      <publishTime>11/28/2018 15:04:24</publishTime>
+    </File>
+    <File Include="System.Web.WebPages.Razor.dll">
+      <publishTime>11/28/2018 15:04:24</publishTime>
+    </File>
+    <File Include="Ubiety.Dns.Core.dll">
+      <publishTime>06/10/2022 23:34:18</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/29/2023 12:27:31</publishTime>
+    </File>
+    <File Include="wwwroot/css/bootstrap.css">
+      <publishTime>12/13/2022 15:37:09</publishTime>
+    </File>
+    <File Include="wwwroot/css/StyleSheet3.css">
+      <publishTime>12/14/2022 17:39:29</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Audi_Etron.jpg">
+      <publishTime>10/06/2022 17:33:12</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Aventador  SVJ 1.jpg">
+      <publishTime>10/24/2022 14:28:52</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/dodge-charger.jpg">
+      <publishTime>10/24/2022 13:48:15</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Jaguar F pace 2021.jpg">
+      <publishTime>10/24/2022 13:34:58</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Land-Rover-Range-Rover-Sport-2021.jpg">
+      <publishTime>10/06/2022 17:32:36</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Lexus.jpg">
+      <publishTime>10/24/2022 14:21:30</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/M4.jpg">
+      <publishTime>10/24/2022 14:20:28</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Mustang.jpg">
+      <publishTime>10/24/2022 14:40:32</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Novo-Porsche-Cayenne-2022 %282%29.jpg">
+      <publishTime>10/24/2022 14:35:48</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Peugeot 3008.jpg">
+      <publishTime>10/24/2022 13:41:54</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Peugeot_508.jpg">
+      <publishTime>10/06/2022 17:43:00</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Prado.jpg">
+      <publishTime>10/24/2022 13:44:38</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Raptor.jpg">
+      <publishTime>10/24/2022 13:53:29</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Subaru CVT.jpg">
+      <publishTime>10/24/2022 13:39:06</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Tesla-model-3.jpg">
+      <publishTime>10/06/2022 17:31:58</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Toyota-Rav4.jpg">
+      <publishTime>10/06/2022 17:31:24</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Tucson.jpg">
+      <publishTime>10/24/2022 14:24:20</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Vito.jpg">
+      <publishTime>10/24/2022 13:56:36</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Volkswagen_Golf.jpg">
+      <publishTime>10/06/2022 17:33:50</publishTime>
+    </File>
+    <File Include="wwwroot/img/Cars/Volkswagen_Touareg.jpg">
+      <publishTime>10/06/2022 17:30:10</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/BMW M4/first_photo.jpg">
+      <publishTime>10/26/2022 16:31:02</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/BMW M4/four_photo.jpg">
+      <publishTime>10/26/2022 16:28:52</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/BMW M4/second_photo.jpg">
+      <publishTime>10/26/2022 16:29:37</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/BMW M4/third_photo.jpg">
+      <publishTime>10/26/2022 16:32:54</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Toyota_Rav4/first_photo.jpg">
+      <publishTime>10/26/2022 17:14:46</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Toyota_Rav4/four_photo.jpg">
+      <publishTime>10/26/2022 17:18:08</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Toyota_Rav4/second_photo.jpg">
+      <publishTime>10/26/2022 17:15:34</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Toyota_Rav4/third_photo.jpg">
+      <publishTime>10/26/2022 17:16:41</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Volkswagen_Touareg_2020/first.jpg">
+      <publishTime>10/10/2022 12:23:04</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Volkswagen_Touareg_2020/four.jpg">
+      <publishTime>10/10/2022 12:25:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Volkswagen_Touareg_2020/Second.jpg">
+      <publishTime>10/10/2022 12:20:22</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Volkswagen_Touareg_2020/third.jpg">
+      <publishTime>10/10/2022 12:17:24</publishTime>
+    </File>
+    <File Include="wwwroot/img/CarsDetails/Volkswagen_Touareg_2020/Volkswagen_Touareg.jpg">
+      <publishTime>10/26/2022 14:15:41</publishTime>
+    </File>
+    <File Include="wwwroot/img/Image.jpg">
+      <publishTime>10/11/2022 18:17:48</publishTime>
+    </File>
+    <File Include="wwwroot/img/sale-tag.png">
+      <publishTime>09/14/2022 11:02:00</publishTime>
+    </File>
+    <File Include="wwwroot/img/Services/aukcion-usa.jpg">
+      <publishTime>10/10/2022 09:50:44</publishTime>
+    </File>
+    <File Include="wwwroot/img/Services/delivery_in_ukraine.jpg">
+      <publishTime>10/10/2022 09:55:18</publishTime>
+    </File>
+    <File Include="wwwroot/img/Services/delivery_usa.jpg">
+      <publishTime>10/10/2022 09:52:12</publishTime>
+    </File>
+    <File Include="wwwroot/js/bootstrap.bundle.min.js">
+      <publishTime>08/30/2022 13:59:16</publishTime>
+    </File>
+    <File Include="wwwroot/js/jquery.min.js">
+      <publishTime>08/30/2022 13:59:16</publishTime>
+    </File>
+    <File Include="ZstdNet.dll">
+      <publishTime>06/10/2022 23:34:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

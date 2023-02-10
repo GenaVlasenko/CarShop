@@ -1,0 +1,91 @@
+﻿
+@model IEnumerable<CarShop.Data.Models.Car>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel" style="background-color: black; color: lightgray; height: 700px">
+            <div class="panel-heading">Заповніть будь ласка свої дані:</div>
+            <div class="panel-body">
+                <form class="needs-validation" action="~/OrderPage/Order">
+                    <label for="firstName" class="form-label">Ім'я</label><br />
+                    <input type="text" class="form-control" id="firstName" name="FirstName" required=""><br />
+
+                    <label for="lastName" class="form-label">Прізвище</label><br />
+                    <input type="text" class="form-control" id="lastName" name="LastName" required=""><br />
+
+                    <label for="phone" class="form-label">Телефон<span class="text-muted"></span></label><br />
+                    <input type="text" class="form-control" id="email" placeholder="В форматі (099)888-99-99" name="Phone" required=""><br />
+
+                    <label for="address" class="form-label">Поштова адреса</label><br />
+                    <input type="email" class="form-control" id="email" placeholder="order@gmail.com" required="" name="Email"><br />
+
+                    <label for="city" class="form-label">Місто</label><br />
+                    <input type="text" class="form-control" id="address" placeholder="Київ" required="" name="City"><br />
+
+                    <label for="country" class="form-label">Код автомобіля</label><br />
+                    @{ 
+                        bool on_off = false;
+                    }
+                    
+                   @foreach (var item in Model)
+                    {
+                        on_off = true;
+                        <input type="text" class="form-control" id="address" placeholder="@item.id" required="" name="CarId"><br />
+                    }
+                   @if (!on_off)
+                    {
+                        <input type="text" class="form-control" id="address" placeholder="" required="" name="CarId"><br />
+                    }
+
+                    <button class="btn btn-success btn-md" type="submit">Залишити заявку</button>
+                    <br />
+                    <br />
+                   @if (ViewBag.OperationOK != null)
+                    {
+                        <abbr>@ViewBag.OperationOK</abbr>
+                    }
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+   @foreach (var car in Model)
+    {
+        <div class="col-md-4">
+            <div class="panel" style="background-color: black; color: lightgray; height: 550px">
+             
+                   <div class="panel-body">
+                       <div class="photo">
+                          <img src="@car.Picture" style="position:center" class="img-responsive cars_photo"/><br />
+                       </div>
+
+                       <abbr>
+                           Марка авто: @car.CarName<br />
+                           Модель: @car.Model<br />
+                           Рік випуску: @car.Year<br />
+                           Колір: @car.Color<br />
+                           Тип двигуна: @car.Engine<br />
+                           Короба : @car.Transmission<br />
+                           Тип кузова : @car.TypeofCar<br />
+                           Пробіг: @car.Mileage<br />
+                           Наявність: @car.CarInStock<br />
+                           Участь в ДТП : @car.CarAccident <br />
+                           <a style="color:royalblue">Код автомобіля: </a>@car.id<br />
+                          @if (car.Price == ViewBag.PriceWithSale)
+                           {
+                               <a style="color:green">Ціна: @car.Price $ </a><br />
+                           }
+                           else
+                           {
+                               <s style="color:red">Ціна: @car.Price $ </s><br /><a style="color:green">Ціна зі знижкою: @ViewBag.PriceWithSale $</a><img src="~/img/sale-tag.png" height="30" style="padding: 0px 10px" />
+                           }
+                       </abbr>
+
+                   </div>
+            </div>
+    
+        </div>
+    }
+
+</div>

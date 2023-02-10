@@ -1,0 +1,53 @@
+﻿<div class="row">
+    <div class="col-md-4">
+        <div class="panel" style="background-color:black; color:lightgray">
+
+            <div class="panel-heading">Видалити авто:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Home/DeleteCar">
+                    <label class="form-label">Введіть код автомобіля</label><br />
+                    <input type="number" class="form-control" id="carid" placeholder="" name="id" required><br />
+
+                    <button class="btn btn-danger btn-md" type="submit">Видалити авто</button>
+
+                </form>
+
+            </div>
+        </div>
+        <p>@ViewBag.Message</p>
+
+    </div>
+    <div class="col-md-4">
+
+        <div class="panel" style="background-color:black; color:lightgray">
+
+            <div class="panel-heading">Видалити відгук:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Reviews/DeleteReview">
+                    <label class="form-label">Введіть код відгука</label><br />
+                    <input type="number" class="form-control" id="reviewid" placeholder="" value="" required="" name="id"><br />
+
+                    <button class="btn btn-danger btn-md" type="submit">Видалити відео відгук</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel" style="background-color:black; color:lightgray">
+            <div class="panel-heading">Видалити контакт:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Contacts/DeleteContact">
+                    <label class="form-label">Введіть код контакту</label><br />
+                    <input type="number" class="form-control" id="contactid" placeholder="" value="" required="" name="id"><br />
+
+                    <button class="btn btn-danger btn-md" type="submit">Видалити контакт</button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>

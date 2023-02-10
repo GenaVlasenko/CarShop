@@ -1,0 +1,214 @@
+﻿h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight:inherit;
+    font-size:inherit;
+}
+
+
+
+img {
+    vertical-align:top;
+}
+
+html,
+body {
+    height:100%;
+    line-height:1;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: center;
+    background-size: cover;
+    background-size: 100% 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.25s;
+}
+
+
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+.button-standart {
+    color:black;
+    background-color:lightgray;
+    max-width:80%;
+    max-height:30px;
+
+}
+
+.ghost-button {
+    border-color: gray;
+    border: 1px solid;
+    color: lightgray;
+    margin-left: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    text-align:center;
+    outline: none;
+    text-decoration: none;
+    background-color:transparent;
+    height:30px;
+    padding: 5px;
+    
+}
+
+.button-burger {
+    border-color: white;
+    border: 1px solid;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    background-color: transparent;
+    height: 30px;
+    
+}
+
+.ghost-button:hover {
+    color: black;
+    background-color:lightgray;
+        
+}
+
+.input_standart {
+    background-color: lightgray;
+    color:black;
+    max-width:100%;
+}
+
+
+.ghost-input {
+    background-color: transparent;
+    color: lightgray;
+    border-color: gray;
+    margin-right: 5px;
+    height: 30px;
+    width: 160px;
+    padding: 5px;
+}
+
+.__container {
+    max-width:1920px;
+    margin: 0px auto;
+        
+}
+.wrapper {
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-height:100%;
+}
+
+
+.main {
+    padding:20px; 
+    background-color:black; 
+    border-radius:0px;
+    flex: 1 1 auto;
+}
+
+.panel-foto {
+    width: 100%;
+    height: 160px;
+    
+}
+
+.panel_style {
+    background-color: black;
+    color: #898181
+}
+
+.cars_photo {
+    height:100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius:5px;
+}
+
+.car_details_photo {
+    max-width: 48%;
+    max-height: 48%;
+    margin:5px;
+    border-radius:5px
+}
+
+@media (max-width:3840px) {
+
+    
+}
+
+@media (max-width:991.98px) {
+
+    .panel-foto {
+        width: 100%;
+        height: 320px;
+    }
+
+    .ghost-input {
+        background-color: transparent;
+        color: lightgray;
+        border-color: gray;
+        margin-right: 5px;
+        height: 30px;
+        width: 140px;
+        padding: 5px;
+    }
+    
+}
+
+.menu-burger {
+    display:none;
+}
+
+@media (max-width:767.98px) {
+    .menu-burger {
+        display:flex;
+        position:relative;
+        flex: 0 0 30px;
+        height:18px;
+        flex-direction:column;
+        justify-content:space-between;
+        margin: 0 0 0 20px;
+
+    }
+    .menu-burger::before,
+    .menu-burger::after{
+        content: "";
+        background-color:white;
+        height:2px;
+    }
+
+    .menu-burger span {
+        height:2px;
+        background-color:white;
+
+    }
+
+    .panel-foto {
+        width: 100%;
+        height: 320px;
+    }
+
+    .ghost-input {
+        background-color: transparent;
+        color: lightgray;
+        border-color: gray;
+        margin-right: 5px;
+        height: 30px;
+        width: 100px;
+        padding: 5px;
+    }
+
+    
+    
+}

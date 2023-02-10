@@ -1,0 +1,142 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <div class="panel" style="background-color:black; color:lightgray">
+           <div class="panel-heading">Додати нове авто:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" id="form_addnewcar" name="form_addnewcar" action="~/Home/AddCar">
+                    
+                    <label class="form-label">Посилання на фото</label><br />
+                    <input type="text" class="form-control" id="foto" placeholder="" value="" required="" name="Picture"><br />
+
+                    <label class="form-label">Марка:</label><br />
+                    <input type="text" class="form-control" id="car" placeholder="Ford" value="" required="" name="CarName"><br />
+
+                    <label class="form-label">Модель:<span class="text-muted"></span></label><br />
+                    <input type="text" class="form-control" id="model" placeholder="Fusion" name="Model" /><br />
+
+                    <label class="form-label">Рік випуску:</label><br />
+                    <input type="number" class="form-control" id="year" placeholder="2015" required="" name="Year"><br />
+
+                    <label class="form-label">Колір:</label><br />
+                    <input type="text" class="form-control" id="color" placeholder="Чорний" required="" name="Color"><br />
+
+                    <label class="form-label">Тип двигуна:</label><br />
+                    <input type="text" class="form-control" id="engine" placeholder="Бензиновий" required="" name="Engine"><br />
+
+                    <label class="form-label">Тип кузова:</label><br />
+                    <input type="text" class="form-control" id="typeofcar" placeholder="Седан, Хетчбек, Кроссовер, Позашляховик" required="" name="TypeofCar"><br />
+
+                    <label class="form-label">Коробка:</label><br />
+                    <input type="text" class="form-control" id="transmission" placeholder="Ручна, Автоматична, Роботизована, Електро" required="" name="Transmission"><br />
+
+                    <label class="form-label">Пробіг</label><br />
+                    <input type="text" class="form-control" id="mileage" placeholder="40 тис км" required="" name="Mileage"><br />
+
+                    <label class="form-label">Участь у ДТП</label><br />
+                    <input type="text" class="form-control" id="accident" placeholder="Так, Ні" required="" name="CarAccident"><br />
+
+                    <label class="form-label">В наявності</label><br />
+                    <input type="text" class="form-control" id="availability" placeholder="В наявності, в дорозі, під замовлення" required="" name="CarInStock"><br />
+
+                    <label class="form-label">Ціна</label><br />
+                    <input type="number" class="form-control" id="price" placeholder="45000" required="" name="Price"><br />
+
+                    <label class="form-label">Категорія авто</label><br />
+                    <input type="number" class="form-control" id="carcategory" placeholder="1-(Бензиновий), 2-(Електро), 3-(Гібрид) Введіть цифру!" required="" name="CategoryId"><br />
+
+                    <label class="form-label">Знижка</label><br />
+                    <input type="number" class="form-control" id="sale" placeholder="1 = 0%, 2 = 10%, 3 = 20%, 4 = 30%" required="" name="SaleId"><br />
+
+                    <button class="btn btn-success btn-md" type="submit">Додати авто</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="panel" style="background-color:black; color:lightgray">
+            <div class="panel-heading">Додати фото для деталей:</div>
+            <div class="panel-body">
+                <form class="needs-validation" action="~/CarDetais/AddCarsDetails">
+
+                    @*<label class="form-label">Головне фото:</label><br />
+                    <input type="url" class="form-control" id="foto" placeholder="Посилання на головне фото" value="" required="" name="main_photo"><br />*@
+
+                    <label class="form-label">Посилання на відео</label><br />
+                    <input type="url" class="form-control" id="car" placeholder="Посилання на відео" value="" required="" name="video"><br />
+
+                    <label class="form-label">Перше фото екстер'єру<span class="text-muted"></span></label><br />
+                    <input type="url" class="form-control" id="model" placeholder="Посилання на фото" name="first_photo" /><br />
+
+                    <label class="form-label">Друге фото екстер'єру:</label><br />
+                    <input type="url" class="form-control" id="year" placeholder="Посилання на фото" required="" name="second_photo"><br />
+
+                    <label class="form-label">Перше фото інтер'єру:</label><br />
+                    <input type="url" class="form-control" id="color" placeholder="Посилання на фото" required="" name="third_photo"><br />
+
+                    <label class="form-label">Друге фото інтер'єру:</label><br />
+                    <input type="url" class="form-control" id="engine" placeholder="Посилання на фото" required="" name="four_photo"><br />
+
+                    <label class="form-label">Id Автомобіля:</label><br />
+                    <input type="number" class="form-control" id="typeofcar" placeholder="5" required="" name="car_id"><br />
+
+                   
+                    <button class="btn btn-success btn-md" type="submit">Додати авто деталі</button>
+
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel" style="background-color:black; color:lightgray">
+
+            <div class="panel-heading">Додати новий контакт:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Contacts/AddContact">
+                    <label class="form-label">Місто</label><br />
+                    <input type="text" class="form-control" id="city" placeholder="Київ" value="" required="" name="city"><br />
+
+                    <label class="form-label">Телефон:</label><br />
+                    <input type="text" class="form-control" id="phone" placeholder="(099)613-18-10" value="" required="" name="phone"><br />
+
+
+                    <button class="btn btn-success btn-md" type="submit">Додати контакт</button>
+
+                </form>
+
+            </div>
+        </div>
+        <p>@ViewBag.Message</p>
+
+
+    </div>
+    <div class="col-md-3">
+        <div class="panel" style="background-color:black; color:lightgray">
+            <div class="panel-heading">Додати новий відгук:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Reviews/AddReview">
+                    <label class="form-label">Посилання на з Youtube</label><br />
+                    <input type="url" class="form-control" id="link" placeholder="" value="" required="" name="LinkOnVideo"><br />
+
+                    <label class="form-label">Автомобіль покупця</label><br />
+                    <input type="text" class="form-control" id="car" placeholder="" value="" required="" name="Car"><br />
+
+                    <label class="form-label">Зображення для зaставки</label><br />
+                    <input type="url" class="form-control" id="image" placeholder="" value="" required="" name="image"><br />
+
+                    <button class="btn btn-success btn-md" type="submit">Додати відео відгук</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

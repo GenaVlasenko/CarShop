@@ -1,0 +1,109 @@
+﻿<div class="row">
+    <div class="col-md-4">
+        <div class="panel" style="background-color:black; color:lightgray">
+
+            <div class="panel-heading">Редагувати авто в таблиці:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Home/EditCar">
+
+                    <label class="form-label">Ідентифікатор в таблиці</label><br />
+                    <input type="number" class="form-control" id="id" placeholder="" value="" required="" name="id" style="background-color: lightgray;"><br />
+
+                    <label class="form-label">Посилання на фото</label><br />
+                    <input type="url" class="form-control" id="foto" placeholder="" value="" name="Picture"><br />
+
+                    <label class="form-label">Марка:</label><br />
+                    <input type="text" class="form-control" id="car" placeholder="Ford" value=""  name="CarName"><br />
+
+                    <label class="form-label">Модель:<span class="text-muted"></span></label><br />
+                    <input type="text" class="form-control" id="model" placeholder="Fusion" name="Model"/><br />
+
+                    <label class="form-label">Рік випуску:</label><br />
+                    <input type="number" class="form-control" id="year" placeholder="2015"  name="Year"><br />
+
+                    <label class="form-label">Колір:</label><br />
+                    <input type="text" class="form-control" id="color" placeholder="Чорний"  name="Color"><br />
+
+                    <label class="form-label">Тип двигуна:</label><br />
+                    <input type="text" class="form-control" id="color" placeholder="Бензиновий"  name="Engine"><br />
+
+                    <label class="form-label">Тип кузова:</label><br />
+                    <input type="text" class="form-control" id="Typeofcar" placeholder="Седан, Хетчбек, Кроссовер, Позашляховик"  name="TypeofCar"><br />
+
+                    <label class="form-label">Коробка:</label><br />
+                    <input type="text" class="form-control" id="transmission" placeholder="Ручна, Автоматична, Роботизована, Електро"  name="Transmission"><br />
+
+                    <label class="form-label">Пробіг</label><br />
+                    <input type="text" class="form-control" id="mileage" placeholder="40 тис км"  name="Mileage"><br />
+
+                    <label class="form-label">Участь у ДТП</label><br />
+                    <input type="text" class="form-control" id="accident" placeholder="Так, Ні"  name="CarAccident"><br />
+
+                    <label class="form-label">В наявності</label><br />
+                    <input type="text" class="form-control" id="availability" placeholder="В наявності, в дорозі, під замовлення"  name="CarInStock"><br />
+
+                    <label class="form-label">Ціна</label><br />
+                    <input type="number" class="form-control" id="price" placeholder="45000"  name="Price"><br />
+
+                    <label class="form-label">Категорія авто</label><br />
+                    <input type="number" class="form-control" id="carcategory" placeholder="1-(Бензиновий), 2-(Електро), 3-(Гібрид) Введіть цифру!" name="CategoryId"><br />
+
+                    <label class="form-label">Знижка</label><br />
+                    <input type="number" class="form-control" id="sale" placeholder="1 = 0%, 2 = 10%, 3 = 20%, 4 = 30%"  name="SaleId"><br />
+
+                    <button class="btn btn-warning btn-md" type="submit">Редагувати авто</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel" style="background-color:black; color:lightgray">
+
+            <div class="panel-heading">Редагувати контакт:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Contacts/EditContact">
+                    <label class="form-label">Введіть id</label><br />
+                    <input type="number" class="form-control" id="city" placeholder="Id контакта для редагування" value="" required="" name="id"><br />
+
+                    <label class="form-label">Введіть місто</label><br />
+                    <input type="text" class="form-control" id="city" placeholder="Київ" value=""  name="city"><br />
+
+                    <label class="form-label">Введіть новий телефон:</label><br />
+                    <input type="text" class="form-control" id="phone" placeholder="Формат телефону: (099)613-18-10" value="" name="phone"><br />
+
+
+                    <button class="btn btn-warning btn-md" type="submit">Редагувати контакт</button>
+
+                </form>
+
+            </div>
+        </div>
+        <p>@ViewBag.Message</p>
+        
+    </div>
+    <div class="col-md-4">
+        <div class="panel" style="background-color:black; color:lightgray">
+            <div class="panel-heading">Редагувати відгук:</div>
+            <div class="panel-body">
+                <form class="needs-validation" novalidate="" action="~/Reviews/EditReview">
+                    <label class="form-label">Ідентифікатор</label><br />
+                    <input type="number" class="form-control" id="id" placeholder="" value="" required="" name="id"><br />
+
+                    <label class="form-label">Посилання з Youtube</label><br />
+                    <input type="url" class="form-control" id="LinkOnVideo" placeholder="" value=""  name="LinkOnVideo"><br />
+
+                    <label class="form-label">Автомобіль покупця</label><br />
+                    <input type="text" class="form-control" id="Car" placeholder="" value=""  name="Car"><br />
+
+                    <label class="form-label">Зображення для заставкм</label><br />
+                    <input type="url" class="form-control" id="image" placeholder="" name="image"><br />
+
+                    <button class="btn btn-warning btn-md" type="submit">Редагувати відео відгук</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

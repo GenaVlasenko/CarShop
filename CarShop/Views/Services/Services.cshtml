@@ -1,0 +1,82 @@
+﻿<h3>Наші послуги, які входять у вартість нашої комісіі:</h3>
+<div class="row">
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">1. Участь у аукцiонi</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.Auction</abbr>
+        }
+    </div>
+    <hr />
+
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">2. Доставка авто по терiторii США</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.DeliveryUSA</abbr>
+        }
+    </div>
+
+    <hr />
+
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">3. Доставка авто з США в Україну</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.DeliveryUSA_Ukraine</abbr>
+        }
+    </div>
+
+    <hr />
+
+    <div class=" p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">4. Розмитнення</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.Customs_Clearance</abbr>
+        }
+    </div>
+
+    <hr />
+
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">5. Доставка авто до вашого місця проживання</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.Delivery_InCity</abbr>
+        }
+    </div>
+
+    <hr />
+
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">6. Ремонт</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.Repairy</abbr>
+        }
+    </div>
+
+    <hr />
+
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">7. Постановка на облік</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.Registration</abbr>
+        }
+    </div>
+
+    <hr />
+
+    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+        <abbr style="color:cornflowerblue">8. Детейлінг сервіс</abbr><br />
+        @foreach (var item in Model)
+        {
+            <abbr>@item.Detailing</abbr>
+        }
+    </div>
+
+    <hr />
+
+</div>
