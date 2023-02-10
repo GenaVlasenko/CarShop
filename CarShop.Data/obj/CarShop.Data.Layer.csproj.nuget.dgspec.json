@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj": {}
+    "C:\\Projects\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj": {
+    "C:\\Projects\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj",
+        "projectUniqueName": "C:\\Projects\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj",
         "projectName": "CarShop.Data.Layer",
-        "projectPath": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj",
+        "projectPath": "C:\\Projects\\CarShop\\CarShop.Data\\CarShop.Data.Layer.csproj",
         "packagesPath": "C:\\Users\\PortRed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Data\\obj\\",
+        "outputPath": "C:\\Projects\\CarShop\\CarShop.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj": {
-                "projectPath": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj"
+              "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj": {
+                "projectPath": "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj"
               }
             }
           }
@@ -88,14 +88,14 @@
         }
       }
     },
-    "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj": {
+    "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj",
+        "projectUniqueName": "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj",
         "projectName": "CarShop.Domain.Layer",
-        "projectPath": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj",
+        "projectPath": "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj",
         "packagesPath": "C:\\Users\\PortRed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\obj\\",
+        "outputPath": "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

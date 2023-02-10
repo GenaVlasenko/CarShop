@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vw4jOqkBMEkgYhkUG6dd/YVdV5aw/4P9bAtHgUTO1gptot3TusNfHzf6BgsvZ0J06GDqKWVnff/Q0vTpqy5ddg==",
+  "dgSpecHash": "GvaeOpF3bv8I7UOnx1UUhDc8EjBHuswySbvNZt+Fk9a0cRUyjVxe6hP14XPw0Cnq6hGgJMokdD2eciCSKVk5IA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PortRed\\source\\repos\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj",
+  "projectFilePath": "C:\\Projects\\CarShop\\CarShop.Domain.Layer\\CarShop.Domain.Layer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
