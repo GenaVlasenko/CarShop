@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = CarShop.Domain.Layer
-build_property.ProjectDir = C:\Users\PortRed\source\repos\CarShop\CarShop.Domain.Layer\
+build_property.ProjectDir = C:\Projects\CarShop\CarShop.Domain.Layer\
