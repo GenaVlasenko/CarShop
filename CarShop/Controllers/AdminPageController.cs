@@ -1,26 +1,18 @@
 ﻿using CarShop.Business.Layer.Serveces;
 using CarShop.Business.Layer.Services;
-using CarShop.Data.Interfaces;
-using CarShop.Data.Mocks;
-using CarShop.Data.Models;
-using FluentResults;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarShop.Controllers
 {
     public class AdminPageController : Controller
-    {
-        //private readonly IOrders getorders;   
-        //private readonly IAllCars _allcars;
+    { 
 
         private readonly IOrderService _orderService;
         private readonly ICarService _carService;
-        private readonly ICallbackService _callbackService;
+        private readonly IUserApplicationService _callbackService;
 
         private string cookie = "key";
         private string cookielogin = "login";
@@ -29,7 +21,7 @@ namespace CarShop.Controllers
         private string cookiecallbacks = "cookiecallbacks";
         CookieOptions options;
 
-        public AdminPageController(IOrderService orderService, ICarService carService, ICallbackService callbackService)
+        public AdminPageController(IOrderService orderService, ICarService carService, IUserApplicationService callbackService)
         {
             _orderService = orderService;
             _carService = carService;
@@ -76,10 +68,8 @@ namespace CarShop.Controllers
         public IActionResult AdminPage()
         {
             ViewBag.Admin = "1";
-            //DataOrder mockOrder = new DataOrder();
             ViewBag.OrdersMessage = Request.Cookies["cookieorders"];
             ViewBag.CallbacksMessage = Request.Cookies["cookiecallbacks"];
-            //ViewBag.AllCallbacks = mockOrder.GetCallbacks;
             ViewBag.AllCallbacks = _orderService.GetAll();
             return View(_orderService.GetAll());
 
@@ -104,9 +94,6 @@ namespace CarShop.Controllers
         }
         public void DeleteAllOrders()
         {
-            //DataOrder mockOrder = new DataOrder();
-            //string messageorders =  mockOrder.DeleteOrders();
-            //string messagecallbacks = mockOrder.DeleteAllCallbacks();
             var orderresult = _orderService.Delete();
             var callbackresult = _callbackService.Delete();
 

@@ -9,10 +9,10 @@ namespace CarShop.Data.Layer.Common
 
         private SqlCommand _command;
 
-	public SqlConnection connection { get; set; }
-	public SqlDataReader reader { get; set; }
+        public SqlConnection connection { get; set; }
+        public SqlDataReader reader { get; set; }
 
-	public DatabaseConnection(IConfiguration configuration)
+        public DatabaseConnection(IConfiguration configuration)
         {
             _configuration = configuration;
         }

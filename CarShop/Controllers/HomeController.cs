@@ -1,12 +1,11 @@
 ﻿using CarShop.Business.Layer.Serveces;
-using CarShop.Data.Interfaces;
-using CarShop.Data.Mocks;
 using CarShop.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using CarShop.Domain.Layer;
+using System.Collections.Generic;
 
 namespace CarShop.Controllers
 {
@@ -19,9 +18,6 @@ namespace CarShop.Controllers
         private string cookie = "operationlabel";
         CarsListViewModels carsListViewModels;
         CookieOptions options;
-        
-        //int minprice;
-        //int maxprice;
         public HomeController(ICarService carService)
         {
             options = new CookieOptions();
@@ -32,13 +28,25 @@ namespace CarShop.Controllers
             CheckViewBag();
             carsListViewModels = new CarsListViewModels();
             carsListViewModels.GetAllCars = _carService.GetAll();
-            DataCars mockCars = new DataCars();
-            ViewBag.PriceWithSale = DataCars.pricewithsale;
+            List<float> pricewithsalelist = new List<float>();
             ViewBag.CallbackInfo = Request.Cookies["callbackinfo"];
             int minprice = _minprice == 0 ? 0 : _minprice;
             int maxprice = _maxprice == 0 ? 1000000 : _maxprice;
 
-            
+            foreach (var item in _carService.GetAll())
+            {
+                float pricewithsale = item.Price * item.SaleId;
+                if(pricewithsale == item.Price)
+                {
+                    pricewithsalelist.Add(item.Price);
+                }
+                else
+                {
+                    pricewithsalelist.Add(item.Price - pricewithsale);
+                }
+                
+            }
+            ViewBag.PriceWithSale = pricewithsalelist;
 
             if (car != null)
             {
@@ -46,7 +54,7 @@ namespace CarShop.Controllers
                 {
                     ViewBag.TypeofCar = carsListViewModels.GetAllCars.Where(x => x.Engine == car).Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
                     ViewBag.Engine = carsListViewModels.GetAllCars.Select(x => x.Engine).Distinct().OrderBy(x => x);
-                    ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.Engine == car).Select(x => x.CarName).Distinct().OrderBy(x => x);
+                    ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.Engine == car).Select(x => x.Brand).Distinct().OrderBy(x => x);
                     ViewBag.Model = carsListViewModels.GetAllCars.Where(x => x.Engine == car).Select(x => x.Model).Distinct().OrderBy(x => x);
                     carsListViewModels.GetAllCars = carsListViewModels.GetAllCars.Where(x => x.Engine == car).ToList();
                     ViewBag.EngineDropDown = car;
@@ -57,20 +65,20 @@ namespace CarShop.Controllers
                     {
                         ViewBag.Engine = carsListViewModels.GetAllCars.Where(x => x.TypeofCar == car).Select(x => x.Engine).Distinct().OrderBy(x => x);
                         ViewBag.TypeofCar = carsListViewModels.GetAllCars.Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
-                        ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.TypeofCar == car).Select(x => x.CarName).Distinct().OrderBy(x => x);
+                        ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.TypeofCar == car).Select(x => x.Brand).Distinct().OrderBy(x => x);
                         ViewBag.Model = carsListViewModels.GetAllCars.Where(x => x.TypeofCar == car).Select(x => x.Model).Distinct().OrderBy(x => x);
                         carsListViewModels.GetAllCars = carsListViewModels.GetAllCars.Where(x => x.TypeofCar == car).ToList();
                         ViewBag.TypeofCarDropDown = car;
                     }
                     else
                     {
-                        if (carsListViewModels.GetAllCars.Select(x => x.CarName).Distinct().OrderBy(x => x).Contains(car))
+                        if (carsListViewModels.GetAllCars.Select(x => x.Brand).Distinct().OrderBy(x => x).Contains(car))
                         {
-                            ViewBag.TypeofCar = carsListViewModels.GetAllCars.Where(x => x.CarName == car).Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
-                            ViewBag.Engine = carsListViewModels.GetAllCars.Where(x => x.CarName == car).Select(x => x.Engine).Distinct().OrderBy(x => x);
-                            ViewBag.Car = carsListViewModels.GetAllCars.Select(x => x.CarName).Distinct().OrderBy(x => x);
-                            ViewBag.Model = carsListViewModels.GetAllCars.Where(x => x.CarName == car).Select(x => x.Model).Distinct().OrderBy(x => x);
-                            carsListViewModels.GetAllCars = carsListViewModels.GetAllCars.Where(x => x.CarName == car).ToList();
+                            ViewBag.TypeofCar = carsListViewModels.GetAllCars.Where(x => x.Brand == car).Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
+                            ViewBag.Engine = carsListViewModels.GetAllCars.Where(x => x.Brand == car).Select(x => x.Engine).Distinct().OrderBy(x => x);
+                            ViewBag.Car = carsListViewModels.GetAllCars.Select(x => x.Brand).Distinct().OrderBy(x => x);
+                            ViewBag.Model = carsListViewModels.GetAllCars.Where(x => x.Brand == car).Select(x => x.Model).Distinct().OrderBy(x => x);
+                            carsListViewModels.GetAllCars = carsListViewModels.GetAllCars.Where(x => x.Brand == car).ToList();
                             ViewBag.CarNameDropDown = car;
                         }
                         else
@@ -79,36 +87,22 @@ namespace CarShop.Controllers
                             {
                                 ViewBag.TypeofCar = carsListViewModels.GetAllCars.Where(x => x.Model == car).Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
                                 ViewBag.Engine = carsListViewModels.GetAllCars.Where(x => x.Model == car).Select(x => x.Engine).Distinct().OrderBy(x => x);
-                                ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.Model == car).Select(x => x.CarName).Distinct().OrderBy(x => x);
+                                ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.Model == car).Select(x => x.Brand).Distinct().OrderBy(x => x);
                                 ViewBag.Model = carsListViewModels.GetAllCars.Select(x => x.Model).Distinct().OrderBy(x => x);
                                 carsListViewModels.GetAllCars = carsListViewModels.GetAllCars.Where(x => x.Model == car).ToList();
                                 ViewBag.ModelDropDown = car;
                             }
-                            else
-                            {
-
-
-                               
-
-                            }
+                            
                         }
                     }
                 }
             }
             else
             {
-                //mockCars = new MockCars();
-                //carsListViewModels.GetAllCars = mockCars.GetSortedCars(minprice, maxprice);
-                //ViewBag.Engine = carsListViewModels.GetAllCars.Select(x => x.Engine).Distinct().OrderBy(x => x);
-                //ViewBag.TypeofCar = carsListViewModels.GetAllCars.Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
-                //ViewBag.Car = carsListViewModels.GetAllCars.Select(x => x.CarName).Distinct().OrderBy(x => x);
-                //ViewBag.Model = carsListViewModels.GetAllCars.Select(x => x.Model).Distinct().OrderBy(x => x);
-                //ViewBag.PriceWithSale = MockCars.pricewithsale.Where(x => x > minprice && x < maxprice).ToList();
-
 
                 ViewBag.Engine = carsListViewModels.GetAllCars.Where(x => x.Price > minprice && x.Price < maxprice).Select(x => x.Engine).Distinct().OrderBy(x => x);
                 ViewBag.TypeofCar = carsListViewModels.GetAllCars.Where(x => x.Price > minprice && x.Price < maxprice).Select(x => x.TypeofCar).Distinct().OrderBy(x => x);
-                ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.Price > minprice && x.Price < maxprice).Select(x => x.CarName).Distinct().OrderBy(x => x);
+                ViewBag.Car = carsListViewModels.GetAllCars.Where(x => x.Price > minprice && x.Price < maxprice).Select(x => x.Brand).Distinct().OrderBy(x => x);
                 ViewBag.Model = carsListViewModels.GetAllCars.Where(x => x.Price > minprice && x.Price < maxprice).Select(x => x.Model).Distinct().OrderBy(x => x);
                 carsListViewModels.GetAllCars = carsListViewModels.GetAllCars.Where(x => x.Price > minprice && x.Price < maxprice).ToList();
 
@@ -117,10 +111,8 @@ namespace CarShop.Controllers
             return View(carsListViewModels);
              
         }
-        public void AddCar(Domain.Layer.Car addcar)
+        public void AddCar(Car addcar)
         {
-            //mockCars = new DataCars();
-
             var result = _carService.Add(addcar);
             string message = string.Empty;
             if (result.IsFailed)
@@ -134,10 +126,8 @@ namespace CarShop.Controllers
 
 
         }
-        public void EditCar(Domain.Layer.Car editcar)
+        public void EditCar(Car editcar)
         {
-
-            //mockCars = new DataCars();
             var result = _carService.Edit(editcar);
             string message = string.Empty;
             if (result.IsFailed)
@@ -152,8 +142,6 @@ namespace CarShop.Controllers
         }
         public void DeleteCar(int id)
         {
-
-            //mockCars = new DataCars();
             var result = _carService.Delete(id);
             string message = string.Empty;
             if (result.IsFailed)

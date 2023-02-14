@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<CarShop.Data.Models.Car>
+@model IEnumerable<CarShop.Domain.Layer.Car>
 
 <div class="row">
     <div class="col-md-4">
@@ -30,7 +30,7 @@
                    @foreach (var item in Model)
                     {
                         on_off = true;
-                        <input type="text" class="form-control" id="address" placeholder="@item.id" required="" name="CarId"><br />
+                        <input type="text" class="form-control" id="address" placeholder="@item.Id" required="" name="CarId"><br />
                     }
                    @if (!on_off)
                     {
@@ -61,7 +61,7 @@
                        </div>
 
                        <abbr>
-                           Марка авто: @car.CarName<br />
+                           Марка авто: @car.Brand<br />
                            Модель: @car.Model<br />
                            Рік випуску: @car.Year<br />
                            Колір: @car.Color<br />
@@ -71,7 +71,7 @@
                            Пробіг: @car.Mileage<br />
                            Наявність: @car.CarInStock<br />
                            Участь в ДТП : @car.CarAccident <br />
-                           <a style="color:royalblue">Код автомобіля: </a>@car.id<br />
+                           <a style="color:royalblue">Код автомобіля: </a>@car.Id<br />
                           @if (car.Price == ViewBag.PriceWithSale)
                            {
                                <a style="color:green">Ціна: @car.Price $ </a><br />

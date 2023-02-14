@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Picture { get; set; }
-        public string CarName { get; set; }
+        public string Brand { get; set; }
         public string Model { get; set; }
         public string Year { get; set; }
         public string Color { get; set; }
@@ -14,8 +14,8 @@
         public string Mileage { get; set; }
         public string CarAccident { get; set; }
         public string CarInStock { get; set; }
-        public decimal Price { get; set; }
-        public int SaleId { get; set; }
+        public float Price { get; set; }
+        public float SaleId { get; set; }
         public int CategoryId { get; set; }
     }
 }

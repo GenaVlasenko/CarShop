@@ -17,7 +17,7 @@
 
                         <div class="panel-body panel_style" style="background-color:black; overflow:hidden">
                             <abbr style="min-width:min-content; max-width:max-content; max-height:max-content; min-height:min-content">
-                                Марка авто: @car.CarName<br />
+                                Марка авто: @car.Brand<br />
                                 Модель: @car.Model<br />
                                 Рік випуску: @car.Year<br />
                                 Колір: @car.Color<br />
@@ -30,7 +30,7 @@
                                 <a style="color:royalblue">Код автомобіля: </a>@car.Id<br />
                             </abbr>
                             <br />
-                            <form action="~/CarDetails/Index" method="post" style="display:flex; justify-content:center">
+                            <form action="~/CarDetails/GetAll" method="post" style="display:flex; justify-content:center">
                                 <button name="id" type="submit" value="@car.Id" class="btn" style="width: 100%; background-color: #9b988f">Детальніше</button>
                             </form>
 
@@ -71,7 +71,7 @@
                         <div class="panel-body">
 
                             <abbr>
-                                Марка авто: @car.CarName<br />
+                                Марка авто: @car.Brand<br />
                                 Модель: @car.Model<br />
                                 Рік випуску: @car.Year<br />
                                 Колір: @car.Color<br />
@@ -84,7 +84,7 @@
                                 <a style="color:royalblue">Код автомобіля: </a>@car.Id<br />
                             </abbr>
                             <br />
-                            <form action="~/CarDetails/Index">
+                            <form action="~/CarDetails/GetAll">
                                 <button class="btn" name="id" type="submit" value="@car.Id" style="width: 100%; background-color: #DCDCDC">Детальніше</button>
                             </form>
                         </div>
