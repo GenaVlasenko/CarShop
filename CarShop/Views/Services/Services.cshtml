@@ -1,15 +1,16 @@
 ﻿<h3>Наші послуги, які входять у вартість нашої комісіі:</h3>
 <div class="row">
     <div class="p-5 rounded" style="background-color:black; color:lightgray">
-        <abbr style="color:cornflowerblue">1. Участь у аукцiонi</abbr><br />
-        @foreach (var item in Model)
+        @*<abbr style="color:cornflowerblue">1. Участь у аукцiонi</abbr><br />*@
+       @foreach (var item in Model)
         {
-            <abbr>@item.Auction</abbr>
+            <abbr style="color:cornflowerblue">@item.ServiceName</abbr><br />
+            <abbr>@item.Description</abbr><br /><br />
         }
     </div>
     <hr />
 
-    <div class="p-5 rounded" style="background-color:black; color:lightgray">
+    @*<div class="p-5 rounded" style="background-color:black; color:lightgray">
         <abbr style="color:cornflowerblue">2. Доставка авто по терiторii США</abbr><br />
         @foreach (var item in Model)
         {
@@ -77,6 +78,6 @@
         }
     </div>
 
-    <hr />
+    <hr />*@
 
 </div>

@@ -8,18 +8,18 @@ using System.Collections.Generic;
 
 namespace CarShop.Business.Layer.Services.Default
 {
-    public class ReviewService : IReviewsService
+    public class ReviewService : IReviewService
     {
-        private readonly IReviewsRepository _reviewsRepository;
-        public ReviewService(IReviewsRepository reviewsRepository)
+        private readonly IReviewRepository _reviewsRepository;
+        public ReviewService(IReviewRepository reviewsRepository)
         {
             _reviewsRepository = reviewsRepository;
         }
-        public IEnumerable<Reviews> GetAll()
+        public IEnumerable<Review> GetAll()
         {
             return _reviewsRepository.GetAll();
         }
-        public Result Add(Reviews review)
+        public Result Add(Review review)
         {
             if (review.LinkOnVideo == null) 
             {
@@ -51,7 +51,7 @@ namespace CarShop.Business.Layer.Services.Default
 
 
         } 
-        public Result Edit(Reviews review)
+        public Result Edit(Review review)
         {
             if (review.LinkOnVideo == null)
             {
@@ -81,13 +81,6 @@ namespace CarShop.Business.Layer.Services.Default
                 return Result.Fail(ex.Message);
             }
             return Result.Ok();
-
-
-
-
-
-
-
 
         } 
         public Result Delete(int id)

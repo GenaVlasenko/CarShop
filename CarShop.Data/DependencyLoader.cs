@@ -11,12 +11,12 @@ namespace CarShop.Data.Layer
         {
             services.AddSingleton<DatabaseConnection>();
             services.AddScoped<ICarRepository, CarRepository>();
-            services.AddScoped<ICallbackRepository, CallbackRepository>();
-            services.AddScoped<ICarsDetailsRepository, CarDetailsRepository>();
-            services.AddScoped<ICompanyServicesRepository, CompanyServiceRepository>();
+            services.AddScoped<IUserApplicationRepository, UserApplicationRepository>();
+            services.AddScoped<ICarDetailRepository, CarDetailRepository>();
+            services.AddScoped<IServiceRepository, ServiceRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IReviewsRepository, ReviewsRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
 
         }
     }

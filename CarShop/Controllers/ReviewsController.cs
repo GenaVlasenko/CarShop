@@ -1,24 +1,19 @@
 ﻿using CarShop.Business.Layer.Serveces;
-using CarShop.Data.Interfaces;
-using CarShop.Data.Mocks;
-using CarShop.Data.Models;
+using CarShop.Domain.Layer;
 using CarShop.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarShop.Controllers
 {
     public class ReviewsController : Controller
     {
-        //private IReviews reviews;
-        private readonly IReviewsService _reviewService;
+        private readonly IReviewService _reviewService;
         private string cookie = "operationlabel";
         CookieOptions options;
-        public ReviewsController(IReviewsService reviewService)
+        public ReviewsController(IReviewService reviewService)
         {
             _reviewService = reviewService;
             options = new CookieOptions();
@@ -37,9 +32,8 @@ namespace CarShop.Controllers
             carsListViewModels.GetAllReviews = _reviewService.GetAll();
             return View(carsListViewModels.GetAllReviews);
         }
-        public void AddReview(CarShop.Domain.Layer.Reviews review)
+        public void AddReview(Review review)
         {
-            //DataReviews mockReviews = new DataReviews();
             var result =_reviewService.Add(review);
             string message = string.Empty;
             if (result.IsFailed)
@@ -55,16 +49,14 @@ namespace CarShop.Controllers
 
 
         }
-        public void EditReview(CarShop.Domain.Layer.Reviews review)
+        public void EditReview(Review review)
         {
-            //DataReviews mockReviews = new DataReviews();
             var result = _reviewService.Edit(review);
             string message = string.Empty;
             if (result.IsFailed)
             {
                 message = string.Join(",", result.Errors.Select(x => x.Message));
             }
-            //message = mockReviews.EditReview(review);
             options.Expires = DateTime.Now.AddSeconds(10);
             Response.Cookies.Append(cookie, message, options);
             
@@ -72,17 +64,14 @@ namespace CarShop.Controllers
         }
         public void DeleteReview(int id)
         {
-            //DataReviews mockReviews = new DataReviews();
             var result = _reviewService.Delete(id);
             string message = string.Empty;
             if (result.IsFailed)
             {
                 message = string.Join(",", result.Errors.Select(x => x.Message));
             }
-            //message = mockReviews.DeleteReview(id);
             options.Expires = DateTime.Now.AddSeconds(10);
             Response.Cookies.Append(cookie, message, options);
-            
             Response.Redirect("/AdminPage/DeleteElement");
         }
     }

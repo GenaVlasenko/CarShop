@@ -42,22 +42,7 @@ namespace CarShop.Data.Layer.Repositories.Default
 
         public void Edit(Contact contact)
         {
-            string comand = "Update Contacts Set ";
-
-            if (contact.City != null)
-            {
-                comand += $"Місто = '{contact.City}', ";
-            }
-
-            if (contact.Phone != null)
-            {
-                comand += $"Телефон = '{contact.Phone}', ";
-
-            }
-
-            comand = comand.Substring(0, comand.Length - 2);
-            comand += $" Where id = {contact.Id}";
-            _databaseConnection.Connection(comand);
+            _databaseConnection.Connection($"Update Contacts Set City = '{contact.City}'");
             _databaseConnection.connection.Close();
 
         }

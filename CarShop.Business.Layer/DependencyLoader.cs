@@ -10,12 +10,12 @@ namespace CarShop.Business.Layer
         public static void Load(IServiceCollection services)
         {
             services.AddScoped<ICarService, CarService>();
-            services.AddScoped<ICompanyServices, CompanyServices>();
-            services.AddScoped<ICallbackService, CallbackService>();
-            services.AddScoped<ICarsDetailsService, CarDetailsService>();
-            services.AddScoped<IContactsService, ContactService>();
+            services.AddScoped<IService, ServiceService>();
+            services.AddScoped<IUserApplicationService, UserApplicationService>();
+            services.AddScoped<ICarDetailService, CarDetailService>();
+            services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IOrderService, OrderService>();
-            services.AddScoped<IReviewsService, ReviewService>();
+            services.AddScoped<IReviewService, ReviewService>();
 
 
 

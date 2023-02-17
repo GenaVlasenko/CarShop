@@ -24,7 +24,7 @@ namespace CarShop.Business.Layer.Services.Default
 
         public Result Add(Car addcar)
         {
-            if (addcar.CarName == null || CheckBeforeWriting.HasInvalidCharacters(addcar.CarName))
+            if (addcar.Brand == null || CheckBeforeWriting.HasInvalidCharacters(addcar.Brand))
             {
                 return Result.Fail("CarName is empty or has invalid chars");
             }
@@ -107,7 +107,7 @@ namespace CarShop.Business.Layer.Services.Default
 
         public Result Edit(Car editcar)
         {
-            if (editcar.CarName == null || CheckBeforeWriting.HasInvalidCharacters(editcar.CarName))
+            if (editcar.Brand == null || CheckBeforeWriting.HasInvalidCharacters(editcar.Brand))
             {
                 return Result.Fail("CarName is empty or has invalid chars");
             }

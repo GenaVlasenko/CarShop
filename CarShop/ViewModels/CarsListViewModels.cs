@@ -1,5 +1,5 @@
-﻿using CarShop.Data.Models;
-using CarShop.Domain.Layer;
+﻿using CarShop.Domain.Layer;
+using CarShop.Domain.Layer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +9,11 @@ namespace CarShop.ViewModels
 {
     public class CarsListViewModels
     {
-        public IEnumerable<Domain.Layer.Car> GetAllCars { get; set; }
+        public IEnumerable<Car> GetAllCars { get; set; }
         public IEnumerable<Contact> GetAllContacts { get; set; }
-        public IEnumerable<Domain.Layer.Reviews> GetAllReviews { get; set; }
-        public IEnumerable<CompanyService> GetAllServices { get; set; }
-        public IEnumerable<Domain.Layer.CarDetails> GetAllCarDetails { get; set; }
+        public IEnumerable<Review> GetAllReviews { get; set; }
+        public IEnumerable<Service> GetAllServices { get; set; }
+        public IEnumerable<CarDetail> GetAllCarDetails { get; set; }
 
 
     }
